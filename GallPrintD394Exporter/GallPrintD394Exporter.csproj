@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Company.cs" />
+    <Compile Include="Concatenator.cs" />
     <Compile Include="DataAccess.cs" />
     <Compile Include="Exceptions.cs" />
     <Compile Include="Main.cs">

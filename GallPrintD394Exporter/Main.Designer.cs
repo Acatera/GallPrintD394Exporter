@@ -113,7 +113,6 @@
             this.Name = "Main";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Statement 394 Combiner";
-            this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
 
         }

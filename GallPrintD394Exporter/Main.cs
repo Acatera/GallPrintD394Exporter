@@ -39,30 +39,20 @@ namespace GallPrintD394Exporter
             }
             if (exportDialog.ShowDialog() == DialogResult.OK)
             {
-                Statement statement = new Statement(); 
-                DataAccess export = new DataAccess(exportDialog.FileName);
-                
+                Concatenator concatenator = new Concatenator(exportDialog.FileName);
                 foreach (string file in fileListBox.Items)
                 {
                     try
                     {
-                        DataAccess da = new DataAccess(file);
-                        Statement s = new Statement();
-                        s.LoadDataUsing(da);
-                        statement.Append(s);
+                        concatenator.Append(file);
                     }
                     catch (ArgumentException ex)
                     {
                         MessageBox.Show(ex.Message, "Eroare");
                     }
                 }
-                statement.SaveDataUsing(export);
+                concatenator.Save();
             }
-        }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnModify_Click(object sender, EventArgs e)
